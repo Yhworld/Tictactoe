@@ -6,23 +6,29 @@
     box-sizing: border-box;
 }
 
-.loadingpage {
-    background: url(./assets/nordwood-themes-9a58YsGiTPk-unsplash.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 1;
-    height: 100vh;
+body {
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background:linear-gradient(to right, #1a0808, #000000);
 }
 
-
+.loadingpage {
+    /* background: url(./assets/nordwood-themes-9a58YsGiTPk-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1; */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* height: 100vh; */
+    /* display: none; */
+}
 
 h1 {
     font-size: 7rem;
+    font-weight: lighter;
     color: #fff;
     font-family: 'vibur';
     color: #fff;
     text-align: center;
-    padding-top: 5rem;
+    padding-top: 2rem;
     animation: flicker 1.5s infinite alternate;
     text-shadow:
         0 0 7px #fff,
@@ -48,6 +54,8 @@ span {
     0 0 151px #bc13fe;
     transform: scale(1);
 	animation: pulse 2s infinite;
+    cursor: pointer;
+    display: none;
 }
 
 @keyframes pulse {
@@ -95,4 +103,50 @@ span {
 
 span.material-symbols-outlined {
     font-size: 6rem;
+    display: none;
+}
+
+section.main {
+    /* height: 100vh; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
+    color: #fff;
+    /* background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    /* background:linear-gradient(to right, #1a0808, #000000);  */
+    /* display: none; */
+}
+
+.gameboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.field {
+    width: 100px;
+    height: 100px;
+    border: none;
+    /* background-color: #cef1ce; */
+    font-size: 100px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 3px solid #fff;
+    border-right: 3px solid #fff;
+}
+
+div#three, #six, #nine {
+    border-right: none;
+}
+div#seven, #eight, #nine {
+    border-bottom: none;
+}
+
+.message {
+    font-size: 2rem;
+}
+
+button {
+    padding: 10px 30px 10px 30px;
 }
