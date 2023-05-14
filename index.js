@@ -15,6 +15,17 @@ const gameBoard = (() => {
       [2, 4, 6],
     ];
 
+    const switchPlayer = () => {
+      if (currentPlayer === 'X') {
+        currentPlayer = 'O'
+      } else {
+        currentPlayer = 'X'
+      }
+      message.textContent = `Player ${currentPlayer} turn`
+    }
+
+
+
     const checkForWin = (player) => {
       for (let i = 0; i < winningFormulas.length; i++) {
         const formula = winningFormulas[i];
@@ -61,7 +72,13 @@ const gameBoard = (() => {
     }
 
     const getBoard = () => [...board]
+
+    return {
+      getBoard,
+      playMove
+    }
   })();
+
 
 
   
