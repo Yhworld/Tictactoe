@@ -21,7 +21,7 @@ const gameBoard = (() => {
       } else {
         currentPlayer = 'X'
       }
-      message.textContent = `Player ${currentPlayer} turn`
+      message.textContent = `Player ${currentPlayer}'s turn`
     }
 
 
@@ -61,6 +61,16 @@ const gameBoard = (() => {
         if (checkForWin(currentPlayer)) {
           gameOver = true
           message.textContent = `${currentPlayer} wins`
+          const formula = winningFormulas.find((formula) => {
+            let count = 0;
+            for (let j = 0; j < formula.length; j++) {
+              if (board[formula[j]] === currentPlayer) {
+                count++;
+              }
+            }
+            return count === 3;
+          });
+          formula.forEach((i) => squares[i].classList.add('winning-square'));
         } else if(checkForDraw()) {
           gameOver = true
           message.textContent = "its a draw"
