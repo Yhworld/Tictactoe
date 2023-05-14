@@ -14,6 +14,40 @@ const gameBoard = (() => {
       [0, 4, 8],
       [2, 4, 6],
     ];
+
+    const checkForWin = (player) => {
+      for (let i = 0; i < winningFormulas.length; i++) {
+        const formula = winningFormulas[i];
+        let count = 0;
+
+        for (let j = 0; j < formula.length; j++) {
+          if (board[formula[j]] === player) {
+            count++;
+          }     
+        }
+
+        if (count === 3) {
+          return true;  
+        }
+      }
+      return false;
+    }
+
+    const checkForDraw = () => {
+      const board = gameBoard.getBoard()
+      for (let i = 0; i < board.length; i++) {
+        if (board[i] === "") {
+          return false;
+        }
+      }
+      return false;
+    }
+
+    const getBoard = () => [...board]
+
+    return {
+      getBoard
+    }
   })();
   
 
