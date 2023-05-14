@@ -79,7 +79,18 @@ const gameBoard = (() => {
     }
   })();
 
+  const squares = document.querySelectorAll('.field');
+squares.forEach((square, index) => {
+  square.addEventListener('click', () => {
+    gameBoard.playMove(index);
+  });
+});
 
+const disableClicks = () => {
+  squares.forEach((square) => {
+    square.removeEventListener('click', gameBoard.playMove);
+  });
+};
 
   
   
