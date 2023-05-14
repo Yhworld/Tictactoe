@@ -43,13 +43,25 @@ const gameBoard = (() => {
       return false;
     }
 
-    const getBoard = () => [...board]
-
-    return {
-      getBoard
+    const playMove = (index) => {
+      if (!gameOver && board[index] === "") {
+        board[index] = currentPlayer
+        squares[index].textContent = currentPlayer
+        if (checkForWin(currentPlayer)) {
+          gameOver = true
+          message.textContent = `${currentPlayer} wins`
+        } else if(checkForDraw()) {
+          gameOver = true
+          message.textContent = "its a draw"
+        }
+        else {
+          switchPlayer()
+        }
+      }
     }
+
+    const getBoard = () => [...board]
   })();
-  
 
 
   
