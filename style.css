@@ -46,7 +46,7 @@ span {
     transform: scale(1);
 	animation: pulse 2s infinite;
     cursor: pointer;
-    display: none;
+    /* display: none; */
 }
 
 @keyframes pulse {
@@ -94,7 +94,7 @@ span {
 
 span.material-symbols-outlined {
     font-size: 6rem;
-    display: none;
+    /* display: none; */
 }
 
 section.main {
@@ -106,7 +106,7 @@ section.main {
     color: #fff;
     /* background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
     /* background:linear-gradient(to right, #1a0808, #000000);  */
-    /* display: none; */
+    display: none;
 }
 
 .gameboard {
