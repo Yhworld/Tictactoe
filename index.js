@@ -54,6 +54,17 @@ const gameBoard = (() => {
       return false;
     }
 
+    const resetGame = () => {
+      board.fill('');
+      squares.forEach((square) => {
+        square.textContent = "";
+        square.classList.remove('winning-square');
+      });
+      gameOver = false;
+      currentPlayer = 'X';
+      message.textContent = `Player ${currentPlayer}'s turn`
+    }
+
     const playMove = (index) => {
       if (!gameOver && board[index] === "") {
         board[index] = currentPlayer
@@ -85,7 +96,8 @@ const gameBoard = (() => {
 
     return {
       getBoard,
-      playMove
+      playMove,
+      resetGame
     }
   })();
 
@@ -102,5 +114,7 @@ const disableClicks = () => {
   });
 };
 
-  
-  
+const resetButton = document.querySelector(".reset");
+resetButton.addEventListener("click", () => {
+  gameBoard.resetGame();
+});
