@@ -12,15 +12,6 @@ body {
     background:linear-gradient(to right, #1a0808, #000000);
 }
 
-.loadingpage {
-    /* background: url(./assets/nordwood-themes-9a58YsGiTPk-unsplash.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 1; */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    /* height: 100vh; */
-    /* display: none; */
-}
-
 h1 {
     font-size: 7rem;
     font-weight: lighter;
@@ -147,8 +138,25 @@ div#seven, #eight, #nine {
 
 .message {
     font-size: 2rem;
+    font-family: monospace;
 }
 
 button {
     padding: 10px 30px 10px 30px;
+}
+
+.winning-square {
+    background-color: yellow;
+    transition-delay: 0.2s;
+    border: solid 1px rgb(255, 255, 255);
+  }
+
+  button {
+    padding: 15px 40px 15px 40px;
+    background: #bc13fe;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
