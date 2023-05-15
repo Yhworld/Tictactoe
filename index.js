@@ -118,3 +118,14 @@ const resetButton = document.querySelector(".reset");
 resetButton.addEventListener("click", () => {
   gameBoard.resetGame();
 });
+
+const playBtn = document.querySelector("span.material-symbols-outlined ")
+const main = document.querySelector(".main")
+const upperTxt = document.querySelector("span")
+const start = document.querySelector(".start")
+
+playBtn.addEventListener('click' , () => {
+  upperTxt.style.display = "none";
+  main.style.display = "flex"
+  start.style.display = "none"
+})
