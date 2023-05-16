@@ -53,6 +53,7 @@ const gameBoard = (() => {
       }
       return false;
     }
+    
 
     const resetGame = () => {
       board.fill('');
